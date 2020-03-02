@@ -293,7 +293,27 @@ function HealingAsssignments.Mainframe:PopulateTankDropdown()
 		UIDropDownMenu_AddButton(info);
 	end
 
+	-- create decurse field
+	info = UIDropDownMenu_CreateInfo();
+	info.text = "Dispel"
+	info.checked = false
+	info.notCheckable = true;
+	info.func = function(self)
+		UIDropDownMenu_SetText(GlobalTankDropDownID, self:GetText())
+		HealingAsssignments:UpdateRaidDataBase()
+	end
+	UIDropDownMenu_AddButton(info);
 
+	-- create melee field
+	info = UIDropDownMenu_CreateInfo();
+	info.text = "Melee"
+	info.checked = false
+	info.notCheckable = true;
+	info.func = function(self)
+		UIDropDownMenu_SetText(GlobalTankDropDownID, self:GetText())
+		HealingAsssignments:UpdateRaidDataBase()
+	end
+	UIDropDownMenu_AddButton(info);
 
 	-- create emtpy field to deleting
 	info = UIDropDownMenu_CreateInfo();
