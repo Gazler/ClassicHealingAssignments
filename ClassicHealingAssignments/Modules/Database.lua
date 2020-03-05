@@ -293,27 +293,18 @@ function HealingAsssignments.Mainframe:PopulateTankDropdown()
 		UIDropDownMenu_AddButton(info);
 	end
 
-	-- create decurse field
-	info = UIDropDownMenu_CreateInfo();
-	info.text = "Dispel"
-	info.checked = false
-	info.notCheckable = true;
-	info.func = function(self)
-		UIDropDownMenu_SetText(GlobalTankDropDownID, self:GetText())
-		HealingAsssignments:UpdateRaidDataBase()
+	-- create extra fields
+	for _, field in ipairs({"Main Tank", "Off Tank", "Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6", "Group 7", "Group 8", "Even", "Uneven", "Melee", "Dispel"}) do
+		info = UIDropDownMenu_CreateInfo();
+		info.text = field
+		info.checked = false
+		info.notCheckable = true;
+		info.func = function(self)
+			UIDropDownMenu_SetText(GlobalTankDropDownID, self:GetText())
+			HealingAsssignments:UpdateRaidDataBase()
+		end
+		UIDropDownMenu_AddButton(info);
 	end
-	UIDropDownMenu_AddButton(info);
-
-	-- create melee field
-	info = UIDropDownMenu_CreateInfo();
-	info.text = "Melee"
-	info.checked = false
-	info.notCheckable = true;
-	info.func = function(self)
-		UIDropDownMenu_SetText(GlobalTankDropDownID, self:GetText())
-		HealingAsssignments:UpdateRaidDataBase()
-	end
-	UIDropDownMenu_AddButton(info);
 
 	-- create emtpy field to deleting
 	info = UIDropDownMenu_CreateInfo();
