@@ -294,7 +294,7 @@ function HealingAsssignments.Mainframe:PopulateTankDropdown()
 	end
 
 	-- create extra fields
-	for _, field in ipairs({"Main Tank", "Off Tank", "Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6", "Group 7", "Group 8", "Even", "Uneven", "Melee", "Dispel"}) do
+	for _, field in ipairs({"Main Tank", "Off Tank", "Warlock Tank", "Kiters", "Understudy", "Web Wrap", "Frost Blasted", "Left", "Middle", "Right", "Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6", "Group 7", "Group 8", "Even", "Uneven", "Melee", "Dispel", "Mark 1, 4, 7, 10", "Mark 2, 5, 8, 11", "Mark 3, 6, 9, 12", "Mind Control", "Shackle", "Fear Ward"}) do
 		info = UIDropDownMenu_CreateInfo();
 		info.text = field
 		info.checked = false
